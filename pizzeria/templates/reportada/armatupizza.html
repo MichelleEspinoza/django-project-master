@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Arma tu pizza{% endblock %}
+{% block css %}
+{% endblock %}
+{% block load %}
+<div class="loader-page">
+  <img src="{% static 'img/giphy3.gif' %}" >
+  </div>
+{% endblock %}
+{% block content%}
+<div class="jumbotron jumbotron-fluid" >
+  <div class="container" >
+    <h1 class="display-4">Arma tu pizza</h1>
+    <p class="lead">Crea tu pizza ideal, elige la masa que mas te guste y los ingredientes que prefieras.</p>
+  </div>
+</div>
+<form>
+<div class="form-group">
+	<h2>¿Como la quieres?</h2>	
+	<p>Elige tamano:</p>
+    <div class="radio">
+      <label><input type="radio" name="optradio" checked>Mediana</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio">Familiar</label>
+    </div>
+
+    <p>Elige masa:</p>
+    <div class="radio">
+      <label><input type="radio" name="optradio2">Original</label>
+    </div>
+	<div class="radio">
+      <label><input type="radio" name="optradio2" checked>Artisan</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio2">Pan</label>
+    </div>
+
+	 
+  <h2>Salsa preferida</h2>
+  <p>Elige tu salsa:</p>
+    <div class="radio">
+      <label><input type="radio" name="optradio3" checked>Sin salsa</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio3">Salsa de tomate</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio3">Salsa de barbacoa</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio3">Crema fresca</label>
+    </div>
+</div>
+</form>
+{% endblock %}

@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Pizzas{% endblock %}
+<!--css-->
+{% block css %}
+@media screen and (max-width: 930px) { p.capaoculta { display:none;  }  }
+
+.compra { position: relative;}
+.ocultar { display: block;  }
+.aparece { position: absolute; bottom: 100%; left: 6px; right:0px; background-color: #393938b3; overflow: hidden; width: 95%; height:0;  transition: .5s ease;}
+.compra:hover .aparece { bottom: 0; height: 100%; }
+.buttoni { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); padding: 16px 10px; cursor: pointer;   border-radius: 5px; }
+{% endblock %}
+
+<!--Loader page -->
+{% block load %}
+<div class="loader-page">
+  <img src="{% static 'img/giphy3.gif' %}" >
+  </div>
+{% endblock %}
+
+
+{% block content %}
+<section class="container my-5 py-2">
+
+<p class="lead text-center font-weight-bold mb-5"><img src="{% static 'img/pack-prom/pizzas.png' %}" height="33px" > PIZZAS</p>
+
+  <!-- //////////////////////////////////////////////// -->
+  <div class="dropdown-divider"></div>
+ <!-- .........................Fila 1......................... -->
+<div class="card-deck">
+<div class="card bg-info text-white"  style="max-width: 240px;">
+
+  <img class="card-img-top img-fluid" src="{% static 'img/5.jpg' %}" alt="Card image cap">
+
+  <div class="card-body" style="text-align: center;">
+    <h4 class="card-title">Crea tu propia pizza</h4>
+    <br>
+    <a class="btn btn-outline-light" href="{%url 'reportada_app:armatupizza' %}" role="button">Crear pizza!</a>
+  </div>
+</div>
+
+<div class="compra"> 
+<div class="ocultar">
+  <div class="card"  style="max-width: 240px;">
+    <img class="card-img-top" src="{% static 'img/pack-prom/fam-1.png' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Pizza de pepperoni</h5>
+      <p class="card-text text-muted capaoculta">La pizza clasica pero muy deliciosa en 16 rebanadas.</p>
+      <p class="card-text blue-text">Desde<a class="font-weight-bold"> $100.00 MXN</a></p>
+    </div>
+  </div>
+  </div>
+    <div class="aparece">
+    <div class="buttoni btn-success" type="button" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-check-circle"></i> Ordena aquí</div>
+  </div>
+</div>
+
+
+<div class="compra"> 
+  <div class="ocultar">
+  <div class="card"  style="max-width: 240px;">
+    <img class="card-img-top" src="{% static 'img/pack-prom/fam-5.png' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Pizza mexicana</h5>
+      <p class="card-text text-muted capaoculta">La tradicional mexicana en 16 rebanadas.</p>
+      <p class="card-text">Desde<a class="font-weight-bold"> $100.00 MXN</a></p>
+    </div>
+  </div>
+  </div>
+    <div class="aparece">
+    <div class="buttoni btn-success" type="button" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-check-circle"></i> Ordena aquí</div>
+  </div>
+</div>
+
+<div class="compra"> 
+<div class="ocultar">
+  <div class="card"  style="max-width: 240px;">
+    <img class="card-img-top" src="{% static 'img/pack-prom/fam-3.png' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Pizza hawaiana</h5>
+      <p class="card-text text-muted capaoculta">La pizza que no puede faltar en 16 rebanadas.</p>
+      <p class="card-text">Desde<a class="font-weight-bold"> $100.00 MXN</a></p>
+    </div>
+</div>
+  </div>
+    <div class="aparece">
+    <div class="buttoni btn-success" type="button"  data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-check-circle"></i> Ordena aquí</div>
+  </div>
+</div>
+</div>
+<!-- .........................FIn Fila 1......................... -->
+
+
+
+<!--/////////////////////////  Modal ////////////////////////////////-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content" style="background-color: #fff;" style="width: 90%;">
+      <div class="modal-header">
+        <h5 class="modal-title font-weight-bold text-uppercase" id="exampleModalLongTitle" style="color: #ec7a00e6; font-size: 1.5rem;">¿Como quieres tu pizza?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <p class="card-text" style="font-size: 1.1rem;">Elige la masa y el tamaño que más te guste.</p>
+
+  <div class="form-row  text-uppercase">
+    <div class="col text-center">
+      <p class="font-weight-bold text-left" style="color: #ec7a00e6; font-size: 1rem;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Masa</p>
+      <div class="btn-group btn-group-toggle btn-group-vertical text-center" role="group" data-toggle="buttons">
+      <label type="button" class="btn btn-outline-info active text-left"> <input type="radio" name="options" id="option1" autocomplete="off" checked> original</label>
+      <label type="button" class="btn btn-outline-info text-left"><input type="radio" name="options" id="option2" autocomplete="off"> Orilla rellena de queso</label>
+     
+      </div>
+    </div>
+    <div class="col text-center">
+      <p class="font-weight-bold text-left" style="color: #ec7a00e6; font-size: 1rem;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tamaño</p> 
+      <div class="btn-group btn-group-toggle btn-group-vertical text-center" role="group" data-toggle="buttons"> 
+      <label type="button" class="btn btn-outline-info active text-left"> <input type="radio" name="options" id="option1" autocomplete="off" checked> Mediana &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="rounded float-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 3 <i class="fas fa-child"></i>&nbsp;&nbsp;</span>
+      </label>
+      <label type="button" class="btn btn-outline-info text-left"><input type="radio" name="options" id="option2" autocomplete="off">Grande &nbsp;<span class="rounded float-right">| 5 <i class="fas fa-child"></i>&nbsp;&nbsp;</span></label>
+      <label type="button" class="btn btn-outline-info text-left"> <input type="radio" name="options" id="option3" autocomplete="off">Suprema &nbsp;<span class="rounded float-right">| 8 <i class="fas fa-child"></i>&nbsp;&nbsp;</span></label>
+      </div>
+    </div>
+  </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success">Ordenar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!--/////////////////////////  Modal-Personalizar ////////////////////////////////-->
+
+{% endblock  %}
+

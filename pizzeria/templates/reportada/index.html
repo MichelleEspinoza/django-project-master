@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Inicio{% endblock %}
+
+{% block css %}
+      .slider{
+      background: url("{% static 'img/01.jpg' %}");
+      height: 100vh;
+      background-size: cover;
+      background-position: center; 
+      }
+{% endblock %}
+<!--Loader page -->
+{% block load %}
+<div class="loader-page">
+  <img src="{% static 'img/giphy3.gif' %}" >
+  </div>
+{% endblock %}
+
+{% block section %}
+
+ <!-- <section class="container-fluid slider d-flex justify-content-center align-items-center">
+    <h1 class="display-4" style="color: white" >Bienvenido</h1>
+  </section> -->
+
+  <div class="slider3d first">
+  <div class="slider3d__wrapper">
+    <div class="slider3d__inner">
+      <div class="slider3d__rotater">
+        <div class="slider3d__item">
+      <!--icono llamar -->
+      <div class="d-flex">
+      <div class="ml-auto p-2">
+      <a href="#">
+      <button class="phone btn btn-warning"  type="button"  data-hover=" 6641234567 " data-active="I'M ACTIVE"><span> <i class='fas fa-phone-volume' style='font-size:20px'></i> LLAMAR </span></button>
+      </a>
+      </div>
+      </div>
+      <!--fin llamar-->
+          <h2 class="slider3d__heading" data-text="SO HEADING">Bienvenido</h2>
+        </div>
+        <div class="slider3d__item">
+      <!--icono llamar -->
+      <div class="d-flex">
+      <div class="ml-auto p-2">
+      <a href="#">
+      <button class="phone btn btn-warning"  type="button"  data-hover=" 6641234567 " data-active="I'M ACTIVE"><span> <i class='fas fa-phone-volume' style='font-size:20px'></i> LLAMAR </span></button>
+      </a>
+      </div>
+      </div>
+      <!--fin llamar-->
+          <h2 class="slider3d__heading" data-text="MUCH ROTATION">Conoce nuestras promos</h2>
+        </div>
+        <div class="slider3d__item">
+      <!--icono llamar -->
+      <div class="d-flex">
+      <div class="ml-auto p-2">
+      <a href="#">
+      <button class="phone btn btn-warning"  type="button"  data-hover=" 6641234567 " data-active="I'M ACTIVE"><span> <i class='fas fa-phone-volume' style='font-size:20px'></i> LLAMAR </span></button>
+      </a>
+      </div>
+      </div>
+      <!--fin llamar-->
+          <h2 class="slider3d__heading" data-text="VERY 3D">A tu gusto</h2>
+        </div>
+        <div class="slider3d__item">
+      <!--icono llamar -->
+      <div class="d-flex">
+      <div class="ml-auto p-2">
+      <a href="#">
+      <button class="phone btn btn-warning"  type="button"  data-hover=" 6641234567 " data-active="I'M ACTIVE"><span> <i class='fas fa-phone-volume' style='font-size:20px'></i> LLAMAR </span></button>
+      </a>
+      </div>
+      </div>
+      <!--fin llamar-->
+          <h2 class="slider3d__heading" data-text="WOW WOW!">WOW WOW!</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slider3d__controls">
+    <div class="slider3d__handle">
+      <div class="slider3d__handle__inner">
+        <div class="slider3d__handle__rotater">
+          <div class="slider3d__handle__item active">Bienvenidos</div>
+          <div class="slider3d__handle__item">Promos</div>
+          <div class="slider3d__handle__item">Al gusto</div>
+          <div class="slider3d__handle__item">wow!</div>
+          <div class="slider3d__handle__item">Bienvenidos</div>
+        </div>
+      </div>
+    </div>
+    <div class="slider3d__control m--up"></div>
+    <div class="slider3d__control m--down"></div>
+  </div>
+
+
+</div>
+
+{% endblock %}
+
+{% block content %}
+  
+<!--entregar y recoger -->
+<section class="container my-5 py-0">
+<div class="card text-white  mb-3 cont-gen ">
+  <div class="card-header cont-gene">
+    <ul class="nav nav-tabs card-header-tabs justify-content-center opcion" id="myTab" role="tablist">
+      <li class="nav-item opcione">
+        <a class="nav-link active  opciones" id="entrega-tab" data-toggle="tab" href="#entrega"role="tab" aria-controls="entrega"aria-selected="true"><img src="{% static 'img/entrega.gif' %}" width=30 heigth=auto class="icon-entrega" > Entrega a Domicilio</a>
+      </li>
+      <li class="nav-item opcione" >
+        <a class="nav-link opciones" id="recoger-tab" data-toggle="tab" href="#recoge" role="tab" aria-controls="recoger" aria-selected="false"><img src="{% static 'img/recoger.gif' %}" width=30 heigth=auto class="icon-recoge">  Recoger en  Tienda </a>
+      </li>
+    </ul>
+   </div>
+
+  <div class="card-body tab-content text-opcion" id="myTabContent">
+<div class=" tab-pane fade show active" id="entrega" role="tabpanel" aria-labelledby="entrega-tab">
+    <h5 class="card-title tit-le">¿Dónde entregamos tu pedido?</h5>
+    <p class="card-text">
+    <div class="input-group mb-3 ">
+  <input type="text" class="form-control" placeholder="Ingresa tu dirección" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-success btn-block" type="button">Ordenar ahora</button>
+  </div>
+</div>    
+    <p class="text-primary text-left"><a href="" class="card-link"><i class="fas fa-map-marker-alt"></i></i> Utiliza mi ubicación</a></p>
+    </p>
+</div>
+<div class="tab-pane fade" id="recoge" role="tabpanel" aria-labelledby="recoge-tab">
+    <h5 class="card-title tit-le">Encuentra tu tienda mas cercana:</h5>
+    <p class="card-text">
+    <div class="input-group mb-3 ">
+  <input type="text" class="form-control" placeholder="Ingresa tu CP o colonia" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-success btn-block" type="button">Ordenar ahora</button>
+  </div>
+</div>    
+    <p class="text-primary text-left"><a href="" class="card-link"><i class="fas fa-map-marker-alt"></i></i> Utiliza mi ubicación</a></p>
+    </p>
+</div>
+  </div>
+</div>
+</section>
+<!--fin card-->
+<div class="dropdown-divider"></div>
+<!-- PROMOs-->
+<section class="container my-5 py-2">
+  <h3 class="text-uppercase text-center mb-4">  </h3>
+
+  <p class="lead text-center mb-5" style="font-size: 1.5rem;"> NUESTRO MENÚ </p>
+  <div class="card-deck text-white" >
+    <div class="card">
+
+      <img class="card-img-top img-fluid" src="{% static 'img/1.jpg' %}" alt="Card image cap">
+
+      <div class="card-block" style="background-color:#58b369; text-align: center;">
+        <h4 class="card-title">Pizzas</h4>
+        <br>
+        <a class="btn btn-outline-light" href="{%url 'reportada_app:pizzas' %}" role="button">Conocelas!</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top img-fluid" src="{% static 'img/5.jpg' %}" alt="Card image cap">
+      <div class="card-block" style="background-color:#d45456; text-align: center;">
+        <h4 class="card-title">Pastas</h4>
+        <br>
+        <a class="btn btn-outline-light" href="#" role="button">Conocelas!</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top img-fluid" src="{% static 'img/6.jpg' %}"alt="Card image cap">
+      <div class="card-block" style="background-color:#41a8bc; text-align: center;">
+        <h4 class="card-title">Antojos</h4>
+        <br>
+        <a class="btn btn-outline-light" href="#" role="button">Conocelos!</a>
+      </div>
+    </div>
+  </div>
+  </section>
+  <!-- fin Cards -->
+  <!-- START THE FEATURETTES -->
+
+      <div class="container my-5">
+        <hr class="">
+        <br><br><br>
+                  <h2 class="lead text-center mb-5" style="font-size: 1.5rem;"> NUESTRAS PROMOCIONES MÁS POPULARES </h2>
+        <div class="row d-flex align-items-center my-5 py-5">
+          <div class="col-md-7">
+            <h2 class="display-4">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">Donec ullamcorper .......</p>
+          </div>
+          <div class="col-md-5">
+            <img class=" img-fluid mx-auto" src="{% static 'img/12.jpg' %}" alt="Generic placeholder image">
+          </div>
+        </div>
+        
+        <hr class="">
+        
+        <div class="row d-flex align-items-center my-5 py-5">
+          <div class="col-md-7 push-md-5">
+            <h2 class="display-4">Oh yeah, it's that good.<span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum ......</p>
+          </div>
+          <div class="col-md-5 pull-md-7">
+            <img class=" img-fluid mx-auto" src="{% static 'img/9.jpg' %}" alt="Generic placeholder image">
+          </div>
+        </div>
+        
+        <hr class="">
+        
+        <div class="row d-flex align-items-center my-5 py-5">
+          <div class="col-md-7">
+            <h2 class="display-4">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis .....</p>
+          </div>
+          <div class="col-md-5">
+            <img class=" img-fluid mx-auto" src="{% static 'img/2.jpg' %}" alt="Generic placeholder image">
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <!-- /END THE FEATURETTES -->
+
+  
+{% endblock  %}

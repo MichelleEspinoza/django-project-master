@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Inicia sesión{% endblock %}
+<head>
+	{% block head %}
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" >
+		<link rel="stylesheet" href="{% static 'css/util.css' %}" >  
+	{% endblock %}
+</head>
+{% block load %}
+<div class="loader-page">
+	<img src="{% static 'img/giphy3.gif' %}" >
+</div>
+{% endblock %}
+
+{% block content %}
+	
+<div class="container-login100" style="background-image: url({% static 'img/6.jpg' %}); text-align: center;">
+	<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-20">
+		<form method="POST" class="login100-form validate-form" action="{%url 'reportada_app:sesion' %}">
+			{% csrf_token %}
+			{% if request.GET.next %}
+				<input type="hidden" name="next" value="{{request.GET.next}}">
+			{% endif %}
+			<span class="login100-form-title p-b-30 font-weight-bold">
+				<i class="fas fa-user"></i> Inicia sesión
+			</span>
+			{% if message %}
+				<b>{{message}}</b>
+			{% endif %}
+			<br>
+			<br>
+
+			<div class="form-group wrap-input100 validate-input  m-b-20" data-validate="Ingresa tu nombre de usuario" for="text">
+				<input type="text" class="form-control input100" id="usuario1" aria-describedby="emailHelp" name="username" placeholder="Nombre de usuario">
+				<span class="focus-input100"></span>
+			</div>
+
+			<div class="form-group wrap-input100 validate-input m-b-25" data-validate = "Ingresa tu contraseña" for="password">
+				<input class="form-control input100" id="password1" type="password" aria-describedby="passwordHelp" name="password" placeholder="Contraseña">
+				<span class="focus-input100"></span>
+			</div>
+
+			<div class="form-group form-check text-center p-t-8">
+				<input type="checkbox" class="form-check-input" id="exampleCheck1">
+				<label class="form-check-label text-muted" for="exampleCheck1">Recordarme</label>
+			</div>
+
+			<div class="text-center p-t-20 p-b-20">
+				<div class="form-group">
+					<input class="btn btn-primary" type="submit" value="Ingresar">
+				</div>
+			</div>
+
+			<!-- <div class="dropdown-divider"></div>
+			<div class="text-center p-t-20 p-b-20">
+				<span class="txt1">
+				O ingresa con:
+				</span>
+			</div>
+
+			<div class="flex-c p-b-50">
+				<a href="#" class="login100-social-item">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+				<a href="#" class="login100-social-item">
+					<img src="{% static 'img/icon-google.png' %}" alt="GOOGLE">
+				</a>
+			</div> -->
+
+			<div class="dropdown-divider"></div>	
+		    <div class="text-center p-b-10">
+		    	<a class="font-weight-bold">¿No tienes cuenta?</a>
+		    </div>
+            <div class="text-center">
+            	<a href="{%url 'reportada_app:registrar' %}" class="btn btn-outline-secondary btn-lg btn-block">Registrate</a>
+            </div>
+            
+			
+		</form>
+	</div>
+</div>
+{% endblock  %}
